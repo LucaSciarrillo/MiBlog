@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #181922;
+            color: #fff;
+            font-family: 'Arial Black', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .drivers-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 24px;
+        }
+        .drivers-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px 64px;
+        }
+        .driver-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+       .driver-photo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 18px;
+        object-fit: cover;
+        border: 2px solid #22223b;
+        background: #22223b;
+}
+        .driver-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .driver-lastname {
+            font-weight: bold;
+        }
+        @media (max-width: 1100px) {
+            .drivers-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            .drivers-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .main-navbar {
+    width: 100vw;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    gap: 48px;
+}
+
+.main-navbar li {
+    list-style-type: none;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #fff;
+    color: #e10600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.nav-btn:hover {
+    background: #e10600;
+    color: #fff;
+}
+.drivers-title {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin: 32px 0 24px 0;
+    text-transform: uppercase;
+}
+.f1-navbar {
+    width: 100vw;
+    background: #191a22;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 24px;
+    border-top: 4px solid #e10600;
+}
+.f1-navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    padding: 0 10px;
+    min-height: 60px;
+    position: relative;
+}
+.f1-logo {
+    height: 40px;
+    margin: 4px 40px 4px 4px;
+    background: #191a22;
+    border-radius: 8px;
+}
+.f1-logo img {
+    height: 48px;
+}
+.f1-navbar-content ul {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 90px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.f1-navbar-content ul li a {
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.f1-navbar-content ul li a:hover {
+    color: #e10600;
+}
+@media (max-width: 900px) {
+    .f1-navbar-content ul {
+        gap: 32px;
+    }
+    .f1-logo img {
+        height: 28px;
+    }
+}
+    </style>
+</head>
+<body>
+<nav class="main-navbar">
+    <ul>
+        <li><a href="pagina.html" class="nav-btn">Inicio</a></li>
+        <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+        <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+    </ul>
+</nav>
+<nav class="f1-navbar">
+    <div class="f1-navbar-content">
+        <img src="Imagenes/f1-logo-red-on-black-e1511528736760.png" alt="F1 Logo" class="f1-logo">
+        <ul>
+            <li><a href="pagina2.html">Pilotos</a></li>
+            <li><a href="pagina3.html">Escuderías</a></li>
+            <li><a href="pagina4.html">Resultados</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="drivers-title">DRIVERS</div>
+     <div class="drivers-container">
+        <div class="drivers-list">
+            <div class="driver-item">
+                <img src="Imagenes/albon.png" alt="Alexander Albon" class="driver-photo">
+                <span class="driver-name">Alexander <span class="driver-lastname">ALBON</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/alonso.png" alt="Fernando Alonso" class="driver-photo">
+                <span class="driver-name">Fernando <span class="driver-lastname">ALONSO</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/kimi.png" alt="Kimi Antonelli" class="driver-photo">
+                <span class="driver-name">Kimi <span class="driver-lastname">ANTONELLI</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/berman.avif" alt="Oliver Bearman" class="driver-photo">
+                <span class="driver-name">Oliver <span class="driver-lastname">BEARMAN</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/bortoleto.png"Gabriel Bortoleto" class="driver-photo">
+                <span class="driver-name">Gabriel <span class="driver-lastname">BORTOLETO</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/colapinto.png" alt="Franco Colapinto" class="driver-photo">
+                <span class="driver-name">Franco <span class="driver-lastname">COLAPINTO</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/gasly.png" alt="Pierre Gasly" class="driver-photo">
+                <span class="driver-name">Pierre <span class="driver-lastname">GASLY</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/isaack.avif" alt="Isack Hadjar" class="driver-photo">
+                <span class="driver-name">Isack <span class="driver-lastname">HADJAR</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/hamilton.png" alt="Lewis Hamilton" class="driver-photo">
+                <span class="driver-name">Lewis <span class="driver-lastname">HAMILTON</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/nico.png" alt="Nico Hulkenberg" class="driver-photo">
+                <span class="driver-name">Nico <span class="driver-lastname">HULKENBERG</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/laim.avif" alt="Liam Lawson" class="driver-photo">
+                <span class="driver-name">Liam <span class="driver-lastname">LAWSON</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/lecrer.png" alt="Charles Leclerc" class="driver-photo">
+                <span class="driver-name">Charles <span class="driver-lastname">LECLERC</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/nor.png" alt="Lando Norris" class="driver-photo">
+                <span class="driver-name">Lando <span class="driver-lastname">NORRIS</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/ocon.png" alt="Esteban Ocon" class="driver-photo">
+                <span class="driver-name">Esteban <span class="driver-lastname">OCON</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/pieastri.png" alt="Oscar Piastri" class="driver-photo">
+                <span class="driver-name">Oscar <span class="driver-lastname">PIASTRI</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/rusel.png" alt="George Russell" class="driver-photo">
+                <span class="driver-name">George <span class="driver-lastname">RUSSELL</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/sainz.png" alt="Carlos Sainz" class="driver-photo">
+                <span class="driver-name">Carlos <span class="driver-lastname">SAINZ</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/stroll.webp" alt="Lance Stroll" class="driver-photo">
+                <span class="driver-name">Lance <span class="driver-lastname">STROLL</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/chino.png" alt="Yuki Tsunoda" class="driver-photo">
+                <span class="driver-name">Yuki <span class="driver-lastname">TSUNODA</span></span>
+            </div>
+            <div class="driver-item">
+                <img src="Imagenes/max.png" alt="Max Verstappen" class="driver-photo">
+                <span class="driver-name">Max <span class="driver-lastname">VERSTAPPEN</span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
