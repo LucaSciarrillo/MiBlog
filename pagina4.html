@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Race Results</title>
+    <style>
+        body {
+            background: #f6f4f2;
+            font-family: 'Orbitron', Arial, sans-serif;
+            margin: 0;
+        }
+        .results-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 32px 24px;
+        }
+        .results-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            color: #222;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f6f4f2;
+        }
+        th, td {
+            padding: 16px 12px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        th {
+            color: #888;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #aaa;
+        }
+        tr:not(:last-child) {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .flag, .team-logo, .driver-logo {
+            vertical-align: middle;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+        }
+        .winner-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .winner-name, .team-name {
+            font-weight: 600;
+        }
+        .vertical-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2px;
+        }
+        .vertical-cell.center {
+            align-items: center;
+        }
+        .time-laps {
+            font-weight: bold;
+        }
+        .time-time {
+            color: #444;
+            font-size: 0.98em;
+        }
+        @media (max-width: 800px) {
+            .results-title { font-size: 2rem; }
+            th, td { padding: 8px 4px; font-size: 0.95rem; }
+        }
+        .main-navbar {
+            width: 100vw;
+            background-color: #ff0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .main-navbar ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            gap: 48px;
+        }
+        .main-navbar li {
+            list-style-type: none;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 10px 28px;
+            background: #fff;
+            color: #e10600;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-family: 'Arial Black', Arial, sans-serif;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .nav-btn:hover {
+            background: #e10600;
+            color: #fff;
+        }
+        /* NAVBAR F1 CENTRADO */
+        .f1-navbar {
+            width: 100vw;
+            background: #191a22;
+            border-bottom: 2px solid #fff;
+            margin-bottom: 24px;
+            border-top: 4px solid #e10600;
+        }
+        .f1-navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100vw;
+            padding: 0 10px;
+            min-height: 48px;
+            position: relative;
+        }
+        .f1-logo {
+            height: 32px;
+            margin: 4px 40px 4px 4px;
+            background: #191a22;
+            border-radius: 8px;
+        }
+        .f1-logo img {
+            height: 40px;
+        }
+        .f1-navbar-content ul {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            gap: 90px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .f1-navbar-content ul li a {
+            color: #fff;
+            font-size: 2rem;
+            font-family: 'Arial Black', Arial, sans-serif;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .f1-navbar-content ul li a:hover {
+            color: #e10600;
+        }
+        @media (max-width: 900px) {
+            .f1-navbar-content ul {
+                gap: 32px;
+            }
+            .f1-logo img {
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-navbar">
+        <ul>
+            <li><a href="index.html" class="nav-btn">Inicio</a></li>
+            <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+            <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+        </ul>
+    </nav>
+    <nav class="f1-navbar">
+        <div class="f1-navbar-content">
+            <img src="Imagenes/f1-logo-red-on-black-e1511528736760.png" alt="F1 Logo" class="f1-logo">
+            <ul>
+                <li><a href="pagina2.html">Pilotos</a></li>
+                <li><a href="pagina3.html">Escuderías</a></li>
+                <li><a href="pagina4.html">Resultados</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="results-container">
+        <div class="results-title">RESULTADOS DE LAS CARRERAS DE 2025</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>GRAND PRIX</th>
+                    <th>DATE</th>
+                    <th>WINNER</th>
+                    <th>TEAM</th>
+                    <th>LAPS / TIME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="Imagenes/autralia.png" class="flag" alt="Australia">Australia</td>
+                    <td>16 Mar</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/nor.png" class="driver-logo" alt="Lando Norris">
+                        <span class="winner-name">Lando Norris</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">57</span>
+                        <span class="time-time">1:42:06.304</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/china.webp" class="flag" alt="China">China</td>
+                    <td>23 Mar</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/pieastri.png" class="driver-logo" alt="Oscar Piastri">
+                        <span class="winner-name">Oscar Piastri</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">56</span>
+                        <span class="time-time">1:30:55.026</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/japon.svg" class="flag" alt="Japan">Japan</td>
+                    <td>06 Apr</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/max.png" class="driver-logo" alt="Max Verstappen">
+                        <span class="winner-name">Max Verstappen</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">Red Bull Racing</span>
+                            <img src="Imagenes/redbull.jpg" class="team-logo" alt="Red Bull Racing">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">53</span>
+                        <span class="time-time">1:22:06.983</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/bar.svg" class="flag" alt="Bahrain">Bahrain</td>
+                    <td>13 Apr</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/pieastri.png" class="driver-logo" alt="Oscar Piastri">
+                        <span class="winner-name">Oscar Piastri</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">57</span>
+                        <span class="time-time">1:35:39.435</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/ara.png" class="flag" alt="Saudi Arabia">Saudi Arabia</td>
+                    <td>20 Apr</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/pieastri.png" class="driver-logo" alt="Oscar Piastri">
+                        <span class="winner-name">Oscar Piastri</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">50</span>
+                        <span class="time-time">1:21:06.758</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/usa.png" class="flag" alt="Miami">Miami</td>
+                    <td>04 May</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/pieastri.png" class="driver-logo" alt="Oscar Piastri">
+                        <span class="winner-name">Oscar Piastri</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">57</span>
+                        <span class="time-time">1:28:51.587</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/italia.webp" class="flag" alt="Emilia-Romagna">Emilia-Romagna</td>
+                    <td>18 May</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/max.png" class="driver-logo" alt="Max Verstappen">
+                        <span class="winner-name">Max Verstappen</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">Red Bull Racing</span>
+                            <img src="Imagenes/redbull.jpg" class="team-logo" alt="Red Bull Racing">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">63</span>
+                        <span class="time-time">1:31:33.199</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/monaco.png" class="flag" alt="Monaco">Monaco</td>
+                    <td>25 May</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/nor.png" class="driver-logo" alt="Lando Norris">
+                        <span class="winner-name">Lando Norris</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">78</span>
+                        <span class="time-time">1:40:33.843</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/españa.png" class="flag" alt="Spain">Spain</td>
+                    <td>01 Jun</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/pieastri.png" class="driver-logo" alt="Oscar Piastri">
+                        <span class="winner-name">Oscar Piastri</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">66</span>
+                        <span class="time-time">1:32:57.375</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/canda.png" class="flag" alt="Canada">Canada</td>
+                    <td>15 Jun</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/rusel.png" class="driver-logo" alt="George Russell">
+                        <span class="winner-name">George Russell</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">Mercedes</span>
+                            <img src="Imagenes/mercedes.jpg" class="team-logo" alt="Mercedes">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">70</span>
+                        <span class="time-time">1:31:52.688</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Imagenes/austria.svg" class="flag" alt="Austria">Austria</td>
+                    <td>29 Jun</td>
+                    <td class="winner-cell">
+                        <img src="Imagenes/nor.png" class="driver-logo" alt="Lando Norris">
+                        <span class="winner-name">Lando Norris</span>
+                    </td>
+                    <td>
+                        <div class="vertical-cell center">
+                            <span class="team-name">McLaren</span>
+                            <img src="Imagenes/nc.jpg" class="team-logo" alt="McLaren">
+                        </div>
+                    </td>
+                    <td class="vertical-cell center">
+                        <span class="time-laps">70</span>
+                        <span class="time-time">1:23:47.693</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

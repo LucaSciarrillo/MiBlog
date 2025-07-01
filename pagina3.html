@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body {
+            background: #181922;
+            margin: 0;
+            font-family: 'Arial Black', Arial, sans-serif;
+        }
+        .main-navbar {
+    width: 100vw;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    gap: 48px;
+}
+
+.main-navbar li {
+    list-style-type: none;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #fff;
+    color: #e10600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.nav-btn:hover {
+    background: #e10600;
+    color: #fff;
+}
+        .teams-container {
+            max-width: 1700px;
+            margin: 40px auto;
+            padding: 24px;
+        }
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 36px 36px;
+        }
+        .team-card {
+            background: #23232b;
+            border-radius: 22px;
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            position: relative;
+            min-height: 220px;
+            overflow: hidden;
+}
+
+        .team-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .team-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+        }
+        .team-name {
+            color: #fff;
+            font-size: 1.6rem;
+            font-family: 'Orbitron', Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .team-car {
+            width: 100%;
+            max-width: 420px;
+            margin-top: 8px;
+            margin-left: 10px;
+        }
+        .team-full {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+}
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .teams-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 900px) {
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .teams-title {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin: 32px 0 24px 0;
+    text-transform: uppercase;
+}
+.f1-navbar {
+    width: 100vw;
+    background: #191a22;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 24px;
+    border-top: 4px solid #e10600;
+}
+.f1-navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    padding: 0 10px;
+    min-height: 60px;
+    position: relative;
+}
+.f1-logo {
+    height: 40px;
+    margin: 4px 40px 4px 4px;
+    background: #191a22;
+    border-radius: 8px;
+}
+.f1-logo img {
+    height: 48px;
+}
+.f1-navbar-content ul {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 90px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.f1-navbar-content ul li a {
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.f1-navbar-content ul li a:hover {
+    color: #e10600;
+}
+@media (max-width: 900px) {
+    .f1-navbar-content ul {
+        gap: 32px;
+    }
+    .f1-logo img {
+        height: 28px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="main-navbar">
+    <ul>
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+        <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+    </ul>
+</nav>
+<nav class="f1-navbar">
+    <div class="f1-navbar-content">
+        <img src="Imagenes/f1-logo-red-on-black-e1511528736760.png" alt="F1 Logo" class="f1-logo">
+        <ul>
+            <li><a href="pagina2.html">Pilotos</a></li>
+            <li><a href="pagina3.html">Escuderías</a></li>
+            <li><a href="pagina4.html">Resultados</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="teams-title">EQUIPOS</div>
+    <div class="teams-container">
+    <div class="teams-grid">
+        <div class="team-card">
+            <img src="Imagenes/alpine.jfif" class="team-full" alt="Alpine">
+        </div>
+        <div class="team-card">
+            <img src="Imagenes/aston.jfif" class="team-full" alt="Aston Martin">
+        </div>
+        <div class="team-card">
+            <img src="Imagenes/ferra.jfif" class="team-full" alt="Ferrari">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/hass.jfif" class="team-full" alt="Haas">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/kick.jfif" class="team-full" alt="Kick Sauber">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/mclaren.jfif" class="team-full" alt="McLaren">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/mercedes.jfif" class="team-full" alt="Mercedes">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/racing.jfif" class="team-full" alt="Racing Bulls">
+        </div>
+        <div class="team-card">
+            <img src="imagenes/bull.jfif" class="team-full" alt="Red Bull Racing">
+        </div>
+        <div class="team-card">
+            <img src="Imagenes/will.jfif" class="team-full" alt="Williams">
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+</html>
