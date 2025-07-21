@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body {
+            background: #191a22;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .main-navbar {
+            width: 100vw;
+            background: #ff0000;
+            padding: 0.5rem 0;
+            border-radius: 16px 16px 0 0;
+            margin-bottom: 0;
+        }
+        .main-navbar ul {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main-navbar .nav-btn {
+            background: #fff;
+            color: #e10600;
+            font-weight: bold;
+            font-size: 2rem;
+            border: none;
+            border-radius: 16px;
+            padding: 18px 38px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .main-navbar .nav-btn:hover {
+            background: #e10600;
+            color: #fff;
+        }
+        /* Segunda barra estilo F1 */
+        .f1-navbar {
+            width: 100vw;
+            background: #191a22;
+            border-top: 4px solid #e10600;
+            margin-bottom: 24px;
+        }
+        .f1-navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .f1-navbar img {
+            height: 48px;
+            background: #18181f;
+            border-radius: 8px;
+            margin-right: 24px;
+        }
+        .f1-navbar .f1-btn {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0 12px;
+        }
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 80vh;
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #23232b;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #0006;
+            padding: 32px 24px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px #0004;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px #e10600aa;
+        }
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .lightbox-content img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px #000a;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -32px;
+            right: 0;
+            font-size: 2.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-shadow: 0 2px 8px #000;
+        }
+        @media (max-width: 700px) {
+            main {
+                padding: 12px 2px;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            .main-navbar .nav-btn {
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
+            .main-navbar ul {
+                gap: 12px;
+            }
+            .f1-navbar ul {
+                gap: 24px;
+            }
+            .f1-navbar .f1-btn {
+                font-size: 1.2rem;
+                padding: 0 4px;
+            }
+            .f1-navbar img {
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-navbar">
+        <ul>
+            <li><a href="index.html" class="nav-btn">Inicio</a></li>
+            <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+            <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+        </ul>
+    </nav>
+    <nav class="f1-navbar">
+        <ul>
+           
+            <li><a href="pagina5.html" class="f1-btn">Calculadora</a></li>
+            <li><a href="pagina6.html" class="f1-btn">Botones</a></li>
+            <li><a href="pagina7.html" class="f1-btn">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="center-content">
+        <main>
+            <h1>Galería de Imágenes</h1>
+            <section class="gallery-grid" id="gallery">
+                
+            </section>
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                    <img id="lightbox-img" src="" alt="Imagen ampliada">
+                </div>
+            </div>
+        </main>
+    </div>
+  <script>
+    
+    const images = [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80", 
+        "https://images.pexels.com/photos/1322185/pexels-photo-1322185.jpeg?_gl=1*1pcw14k*_ga*MTQzNzQwMzM3NC4xNzUzMTI5MjQ0*_ga_8JE65Q40S6*czE3NTMxMjkyNDMkbzEkZzEkdDE3NTMxMjkyNTEkajUyJGwwJGgw",
+        "https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg?_gl=1*zux0w5*_ga*MTQzNzQwMzM3NC4xNzUzMTI5MjQ0*_ga_8JE65Q40S6*czE3NTMxMjkyNDMkbzEkZzEkdDE3NTMxMjk0MTUkajU4JGwwJGgw"
+    ];
+
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = "";
+
+    images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Imagen de galería";
+        img.onclick = () => openLightbox(src);
+        gallery.appendChild(img);
+    });
+
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.getElementById('lightbox-img').src = "";
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") closeLightbox();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botonera de Sonidos</title>
+    <style>
+    body {
+        background: #191a22;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .main-navbar {
+        width: 100vw;
+        background: #ff0000;
+        padding: 0.5rem 0;
+        border-radius: 16px 16px 0 0;
+        margin-bottom: 0;
+    }
+    .main-navbar ul {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .main-navbar .nav-btn {
+        background: #fff;
+        color: #e10600;
+        font-weight: bold;
+        font-size: 2rem;
+        border: none;
+        border-radius: 16px;
+        padding: 18px 38px;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+        display: inline-block;
+    }
+    .main-navbar .nav-btn:hover {
+        background: #e10600;
+        color: #fff;
+    }
+    /* Segunda barra estilo F1 */
+    .f1-navbar {
+        width: 100vw;
+        background: #191a22;
+        border-top: 4px solid #e10600;
+        margin-bottom: 24px;
+    }
+    .f1-navbar ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .f1-navbar img {
+        height: 48px;
+        background: #18181f;
+        border-radius: 8px;
+        margin-right: 24px;
+    }
+    .f1-navbar .f1-btn {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 0 12px;
+    }
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 80vh;
+    }
+    main {
+        background: #23232b;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px #0008;
+        padding: 56px 40px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+    }
+    h1 {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+    .sound-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        justify-content: center;
+    }
+    .sound-btn {
+        background: #e10600;
+        color: #fff;
+        border: none;
+        border-radius: 14px;
+        width: 240px;
+        height: 120px;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+        font-weight: bold;
+        box-shadow: 0 2px 12px #0004;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sound-btn:hover {
+        background: #b00400;
+        transform: scale(1.06);
+    }
+    @media (max-width: 700px) {
+        main {
+            padding: 24px 4px;
+            max-width: 98vw;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        .sound-btn {
+            width: 120px;
+            height: 60px;
+            font-size: 1.1rem;
+            padding: 0;
+        }
+        .sound-buttons {
+            gap: 16px;
+        }
+        .main-navbar .nav-btn {
+            font-size: 1rem;
+            padding: 8px 12px;
+        }
+        .main-navbar ul {
+            gap: 12px;
+        }
+        .f1-navbar ul {
+            gap: 24px;
+        }
+        .f1-navbar .f1-btn {
+            font-size: 1.2rem;
+            padding: 0 4px;
+        }
+        .f1-navbar img {
+            height: 28px;
+            margin-right: 8px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav class="main-navbar">
+        <ul>
+            <li><a href="index.html" class="nav-btn">Inicio</a></li>
+            <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+            <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+        </ul>
+    </nav>
+    <nav class="f1-navbar">
+        <ul>
+            
+            <li><a href="pagina5.html" class="f1-btn">Calculadora</a></li>
+            <li><a href="pagina6.html" class="f1-btn">Botones</a></li>
+            <li><a href="pagina7.html" class="f1-btn">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="center-content">
+        <main>
+            <h1>Botonera de Sonidos</h1>
+            <section class="sound-buttons">
+                <button class="sound-btn" onclick="playSound('sonido1')">Chancho 1</button>
+                <button class="sound-btn" onclick="playSound('sonido2')">Chancho 2</button>
+                <button class="sound-btn" onclick="playSound('sonido3')">Burro</button>
+                <button class="sound-btn" onclick="playSound('sonido4')">Pato</button>
+            </section>
+            <audio id="sonido1" src="Imagenes/bbc_animals--c_07074094.mp3"></audio>
+            <audio id="sonido2" src="Imagenes/bbc_animals--f_07063017.mp3"></audio>
+            <audio id="sonido3" src="Imagenes/bbc_animals--c_07074095.mp3"></audio>
+            <audio id="sonido4" src="Imagenes/-368355.mp3"></audio>
+        </main>
+    </div>
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            if (audio) {
+                if (!audio.paused && !audio.ended) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                } else {
+                    audio.currentTime = 0;
+                    audio.play();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

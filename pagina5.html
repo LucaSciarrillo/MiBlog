@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <style>
+        body {
+            background: #191a22;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .main-navbar {
+            width: 100vw;
+            background: #ff0000;
+            padding: 0.5rem 0;
+            border-radius: 16px 16px 0 0;
+            margin-bottom: 0;
+        }
+        .main-navbar ul {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main-navbar .nav-btn {
+            background: #fff;
+            color: #e10600;
+            font-weight: bold;
+            font-size: 2rem;
+            border: none;
+            border-radius: 16px;
+            padding: 18px 38px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .main-navbar .nav-btn:hover {
+            background: #e10600;
+            color: #fff;
+        }
+        /* Segunda barra estilo F1 */
+        .f1-navbar {
+            width: 100vw;
+            background: #191a22;
+            border-top: 4px solid #e10600;
+            margin-bottom: 24px;
+        }
+        .f1-navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .f1-navbar img {
+            height: 48px;
+            background: #18181f;
+            border-radius: 8px;
+            margin-right: 24px;
+        }
+        .f1-navbar .f1-btn {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0 12px;
+        }
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 80vh;
+        }
+        main {
+            background: #23232b;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0006;
+            padding: 32px 24px;
+            max-width: 340px;
+            width: 100%;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        .calc-display {
+            width: 100%;
+            height: 48px;
+            font-size: 2rem;
+            text-align: right;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: none;
+            padding: 8px 12px;
+            background: #18181f;
+            color: #fff;
+        }
+        .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .calc-btn {
+            padding: 18px 0;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background: #2d2d38;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .calc-btn:hover {
+            background: #e10600;
+        }
+        .calc-btn.operator {
+            background: #e10600;
+            color: #fff;
+        }
+        .calc-btn.operator:hover {
+            background: #b00400;
+        }
+        @media (max-width: 500px) {
+            main {
+                padding: 18px 4px;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            .calc-display {
+                font-size: 1.2rem;
+                height: 36px;
+            }
+            .calc-btn {
+                padding: 10px 0;
+                font-size: 1rem;
+            }
+            .main-navbar .nav-btn {
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
+            .main-navbar ul {
+                gap: 12px;
+            }
+            .f1-navbar ul {
+                gap: 24px;
+            }
+            .f1-navbar .f1-btn {
+                font-size: 1.2rem;
+                padding: 0 4px;
+            }
+            .f1-navbar img {
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-navbar">
+        <ul>
+            <li><a href="index.html" class="nav-btn">Inicio</a></li>
+            <li><a href="../IDENTIKIT/index.html" class="nav-btn">Identikit</a></li>
+            <li><a href="Lincktree.html" class="nav-btn">Linktree</a></li>
+        </ul>
+    </nav>
+    <nav class="f1-navbar">
+        <ul>
+           
+            <li><a href="pagina5.html" class="f1-btn">Calculadora</a></li>
+            <li><a href="pagina6.html" class="f1-btn">Botones</a></li>
+            <li><a href="pagina7.html" class="f1-btn">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="center-content">
+        <main>
+            <h1>Calculadora Básica</h1>
+            <input type="text" class="calc-display" id="display" readonly>
+            <section class="calc-buttons">
+                <button class="calc-btn" onclick="addToDisplay('7')">7</button>
+                <button class="calc-btn" onclick="addToDisplay('8')">8</button>
+                <button class="calc-btn" onclick="addToDisplay('9')">9</button>
+                <button class="calc-btn operator" onclick="addToDisplay('/')">÷</button>
+                <button class="calc-btn" onclick="addToDisplay('4')">4</button>
+                <button class="calc-btn" onclick="addToDisplay('5')">5</button>
+                <button class="calc-btn" onclick="addToDisplay('6')">6</button>
+                <button class="calc-btn operator" onclick="addToDisplay('*')">×</button>
+                <button class="calc-btn" onclick="addToDisplay('1')">1</button>
+                <button class="calc-btn" onclick="addToDisplay('2')">2</button>
+                <button class="calc-btn" onclick="addToDisplay('3')">3</button>
+                <button class="calc-btn operator" onclick="addToDisplay('-')">−</button>
+                <button class="calc-btn" onclick="addToDisplay('0')">0</button>
+                <button class="calc-btn" onclick="addToDisplay('.')">.</button>
+                <button class="calc-btn" onclick="clearDisplay()">C</button>
+                <button class="calc-btn operator" onclick="addToDisplay('+')">+</button>
+                <button class="calc-btn" style="grid-column: span 4;" onclick="calculateResult()">=</button>
+            </section>
+        </main>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        function addToDisplay(value) {
+            display.value += value;
+        }
+        function clearDisplay() {
+            display.value = '';
+        }
+        function calculateResult() {
+            try {
+                display.value = eval(display.value)
+                    .toString()
+                    .replace('.', ',');
+            } catch {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
